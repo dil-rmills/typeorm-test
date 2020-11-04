@@ -51,3 +51,4 @@ publish/
 coverage/
 test-dist/
 helm-charts/output/*
+.env

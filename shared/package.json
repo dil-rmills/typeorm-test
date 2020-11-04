@@ -1,0 +1,27 @@
+{
+  "name": "typeorm-shared",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "prod": "NODE_ENV=production node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bot2600/typeorm-shared.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bot2600/typeorm-shared/issues"
+  },
+  "homepage": "https://github.com/bot2600/typeorm-shared#readme",
+  "dependencies": {
+    "@types/node": "^14.14.6",
+    "sqlite3": "^5.0.0",
+    "typeorm": "^0.2.29"
+  }
+}

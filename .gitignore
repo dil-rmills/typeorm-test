@@ -1,54 +1,6 @@
-/__build__
-/__server_build__
-/typings
-/tsd_typings/
-npm-debug.log
-
 /dist/
 node_modules/
-.idea
 **/dist/
-*/.fusebox/
 */node_modules/
-web/src/**/*.js
-!*.service.worker.js
-web/npm-debug*
-web/coverage/
-web/distTest/
-web/dll/
-web/testresults/
-*.log
 
-*.swp
-*.*~
-project.lock.json
 .DS_Store
-*.pyc
-
-# User-specific files
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
-msbuild.log
-msbuild.err
-msbuild.wrn
-publish/
-
-# Tests
-coverage/
-test-dist/
-helm-charts/output/*
-.env

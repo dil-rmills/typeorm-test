@@ -1,18 +1,18 @@
 import { getConnectionManager } from 'typeorm'
 import * as path from 'path'
-import { getUsersConnectionSharedSharedRun } from 'typeorm-shared'
-import { getUsersLocalConnectionLocalRun, getUsersSharedConnectionLocalRun } from './repositories/user.repository'
+import { getusersConnectionFromSharedRunningQueryInShared } from 'typeorm-shared'
+import { getUsersUsingConnectionFromSharedConnectionRunningQueryOutsideOfShared, getUsersUsingConnectionOutsideOfSharedAndRunningQueryOutsideOfShared } from './repositories/user.repository'
 const root = path.resolve(__dirname, '..')
 
 const connectionManager = getConnectionManager()
 
 async function start () {
-    //create connection in shared, run query in shared
-    await getUsersConnectionSharedSharedRun()
-    //create connection in app, run query in app
-    await getUsersLocalConnectionLocalRun()
-    //create connection in shared, run query in app
-    await getUsersSharedConnectionLocalRun()
+    //logged query is id IN []
+    await getusersConnectionFromSharedRunningQueryInShared()
+    //logged query is id IN []
+    await getUsersUsingConnectionOutsideOfSharedAndRunningQueryOutsideOfShared()
+    //logged query is id = ? 
+    await getUsersUsingConnectionFromSharedConnectionRunningQueryOutsideOfShared()
 }
 
 (async () => {

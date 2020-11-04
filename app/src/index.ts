@@ -1,12 +1,18 @@
-import { In } from 'typeorm'
-import { getOrCreateConnection, User, getUsers } from 'typeorm-shared'
+import { getConnectionManager } from 'typeorm'
+import * as path from 'path'
+import { getUsersConnectionSharedSharedRun } from 'typeorm-shared'
+import { getUsersLocalConnectionLocalRun, getUsersSharedConnectionLocalRun } from './repositories/user.repository'
+const root = path.resolve(__dirname, '..')
+
+const connectionManager = getConnectionManager()
 
 async function start () {
-    await getUsers()
-    const connection = await getOrCreateConnection('someone')
-    const repository = connection.getRepository(User)
-    const users = await repository.find({ id: In(['00f9955c-49e1-4391-b4f8-e4c0bd1d0ce2', '0d3a54cd-116b-4db5-8288-4e8d1ee21946'])})
-    console.log(users)
+    //create connection in shared, run query in shared
+    await getUsersConnectionSharedSharedRun()
+    //create connection in app, run query in app
+    await getUsersLocalConnectionLocalRun()
+    //create connection in shared, run query in app
+    await getUsersSharedConnectionLocalRun()
 }
 
 (async () => {

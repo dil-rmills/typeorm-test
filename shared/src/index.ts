@@ -1,1 +1,1 @@
-export * from './mariadb'
+export * from './database'
